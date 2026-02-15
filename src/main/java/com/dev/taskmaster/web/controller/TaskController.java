@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dev.taskmaster.domain.model.Task;
 import com.dev.taskmaster.service.TaskService;
+import com.dev.taskmaster.web.dto.TaskRequest;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -31,9 +32,12 @@ public class TaskController {
     }
 
     @PostMapping   
-    public ResponseEntity<Task> createTask(@Valid @RequestBody Task task) {
-        Task new_task = taskService.createTask(task);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new_task);
+    public ResponseEntity<Task> createTask(@Valid @RequestBody TaskRequest taskRequest) {
+        Task task = new Task();
+        task.setTitle(taskRequest.title());
+        task.setDescription(taskRequest.description());
+        task.setStatus(taskRequest.taskStatus());
+        return ResponseEntity.status(HttpStatus.CREATED).body(task);
     }
     
     

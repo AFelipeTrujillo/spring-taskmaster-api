@@ -32,7 +32,7 @@ public class Task {
     @Column (name = "id", updatable = false, nullable = false)
     private UUID id;
 
-    @NotBlank(message = "The degree is required")
+    @NotBlank(message = "The title is required")
     @Size(max = 100, message = "The title cannot exceed 100 characters")
     private String title;
 
