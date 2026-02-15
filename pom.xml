@@ -8,7 +8,7 @@
 		<version>4.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring.taskmaster.api</groupId>
+	<groupId>com.dev.taskmaster</groupId>
 	<artifactId>taskmaster</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>taskmaster</name>
